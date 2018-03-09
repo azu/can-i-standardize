@@ -29,7 +29,7 @@
   },
   "scripts": {
     "deploy": "npm run build && gh-pages -d public",
-    "build": "webpack --mode prodution src/index.js --output public/build.js",
+    "build": "webpack --mode production src/index.js --output public/build.js",
     "watch": "webpack --watch --mode development src/index.js --output public/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
