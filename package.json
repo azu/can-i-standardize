@@ -1,0 +1,60 @@
+{
+  "name": "can-i-standardize",
+  "version": "1.0.0",
+  "description": "Can I Standardize?",
+  "keywords": [
+    "browser",
+    "ecmascript",
+    "javascript"
+  ],
+  "homepage": "https://github.com/azu/can-i-standardize",
+  "bugs": {
+    "url": "https://github.com/azu/can-i-standardize/issues"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "main": "lib/can-i-standardize.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/can-i-standardize.git"
+  },
+  "scripts": {
+    "build": "webpack --mode prodution src/index.js --output public/build.js",
+    "watch": "webpack --watch --mode development src/index.js --output public/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "precommit": "lint-staged",
+    "postcommit": "git reset"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 120,
+    "tabWidth": 4
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "lit-html": "^0.9.0"
+  }
+}
