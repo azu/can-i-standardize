@@ -21,10 +21,13 @@ export function isDefined(method, src) {
             resolve(isDefined);
         };
         window.addEventListener("message", receiveMessage, false);
-
+        window.addEventListener("error", (msg, file, line, column, err) => {
+            reject(err || message);
+        });
         const doc = iframe.contentWindow.document;
         doc.open();
-        doc.write(`<script>
+        doc.write(`
+<script>
 delete ${method};
 var _importScript = (function (oHead) {
 

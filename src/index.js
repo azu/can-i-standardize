@@ -23,10 +23,8 @@ const prototypeLibraries = [
 window.addEventListener("load", () => {
     const form = document.querySelector("#js-form");
     const output = document.querySelector("#js-output");
-    form.addEventListener("submit", event => {
-        event.preventDefault();
-        const input = document.querySelector("#js-text");
-        const value = input.value;
+    const input = document.querySelector("#js-text");
+    const checkMethod = value => {
         const words = value.split(".");
         const isAllIdentifier = words.every(word => {
             return Identifier.test(word);
@@ -46,14 +44,24 @@ window.addEventListener("load", () => {
                         isDefined: values[index]
                     };
                 });
-                output.textContent = mappedResults
-                    .map(result => {
-                        return `${result.name} define: ${result.isDefined}`;
-                    })
-                    .join("\n");
+                output.textContent =
+                    mappedResults
+                        .map(result => {
+                            return `${result.name} define: ${result.isDefined}`;
+                        })
+                        .join("\n") + `\n${location.origin}${location.pathname}#${value}`;
             })
             .catch(error => {
                 output.textContent = error.message;
             });
+    };
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        checkMethod(input.value);
     });
+
+    if (location.hash.length > 0) {
+        input.value = location.hash.slice(1);
+        checkMethod(input.value);
+    }
 });
