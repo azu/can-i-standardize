@@ -1,6 +1,5 @@
 // MIT © 2018 azu
 "use strict";
-import { html, render } from "lit-html";
 
 /**
  * Return a promise of `isDefined` boolean.
