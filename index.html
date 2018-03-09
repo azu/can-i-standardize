@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Can I Standardize?</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+<style>
+    .splash {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    #js-text {
+        width: 15em;
+    }
+
+    iframe {
+        display: none;
+    }
+</style>
+<body>
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Can I Standardize this `method`?</h1>
+        <form class="pure-form" id="js-form">
+            <fieldset>
+                <legend>Input your method proposal</legend>
+                <input id="js-text" type="text" placeholder="Array.prototype.flatten" required>
+                <button id="js-submit" type="submit" class="pure-button pure-button-primary">Can I Standardize</button>
+            </fieldset>
+        </form>
+        <pre id="js-output">
+    </pre>
+    </div>
+</div>
+
+<script src="./build.js"></script>
+</body>
+</html>
