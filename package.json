@@ -28,6 +28,7 @@
     "url": "https://github.com/azu/can-i-standardize.git"
   },
   "scripts": {
+    "deploy": "npm run build && gh-pages -d public",
     "build": "webpack --mode prodution src/index.js --output public/build.js",
     "watch": "webpack --watch --mode development src/index.js --output public/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -55,6 +56,5 @@
     ]
   },
   "dependencies": {
-    "lit-html": "^0.9.0"
   }
 }

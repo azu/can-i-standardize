@@ -23,7 +23,9 @@ export function isDefined(method, src) {
         };
         window.addEventListener("message", receiveMessage, false);
 
-        const script = html`<script>
+        const doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(`<script>
 delete ${method};
 var _importScript = (function (oHead) {
 
@@ -47,8 +49,8 @@ _importScript("${src}", function(){
     parent.postMessage(typeof ${method} === "function", "${currentLocation}");
 });
 </script>
-`;
-        render(script, iframe.contentWindow.document.body);
+`);
+        doc.close();
     }).then(isDefined => {
         return isDefined;
     });
