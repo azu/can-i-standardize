@@ -42,8 +42,6 @@ var _importScript = (function (oHead) {
   }
 
 })(document.getElementsByTagName("head")[0]);
-</script>
-<script>
 _importScript("${src}", function(){
     parent.postMessage(typeof ${method} === "function", "${currentLocation}");
 });
