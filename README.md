@@ -2,15 +2,9 @@
 
 Can I Standardize?
 
-## Install
-
-Install with [npm](https://www.npmjs.com/):
-
-    npm install can-i-standardize
-
 ## Usage
 
-- [ ] Write usage instructions
+Open <https://azu.github.io/can-i-standardize/>
 
 ## Changelog
 
