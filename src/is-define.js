@@ -37,14 +37,13 @@ var _importScript = (function (oHead) {
 
   return function (sSrc, fOnload) {
     var oScript = document.createElement("script");
-    oScript.type = "text\\/javascript";
     oScript.src = sSrc;
     oScript.onerror = loadError;
     if (fOnload) { oScript.onload = fOnload; }
     oHead.appendChild(oScript);  
   }
 
-})(document.getElementsByTagName("head")[0]);
+})(document.head);
 _importScript("${src}", function(){
     parent.postMessage(typeof ${method} === "function", "${currentLocation}");
 });
