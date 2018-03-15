@@ -16,7 +16,7 @@ const prototypeLibraries = [
         src: "https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core.min.js"
     },
     {
-        name: "Suger.js",
+        name: "Sugar.js",
         src: "https://cdnjs.cloudflare.com/ajax/libs/sugar/2.0.4/sugar.min.js"
     }
 ];
